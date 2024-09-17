@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Confirmation page V2</title>
+    <!--link rel="stylesheet" type="text/css" th:href="@{/css/helloworld.css}" /-->
+  </head>
+  <body>
+    <h1>Thank you for your submission!</h1>
+    <p>Student name: <span th:text="${param.studentName}"></span></p>
+    <br/><br/>
+    <p>This is your message: <span th:text="${message}"></span></p>
+  </body>
+</html>
