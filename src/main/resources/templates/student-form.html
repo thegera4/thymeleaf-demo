@@ -3,16 +3,42 @@
   <head>
       <meta charset="UTF-8">
       <title>Student Registration Form</title>
-      <!--link rel="stylesheet" type="text/css" th:href="@{/css/helloworld.css}" /-->
+      <style>
+          .error {
+              color: red;
+          }
+      </style>
   </head>
   <body>
         <h1>Student Registration Form</h1>
         <form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
-            <label for="studentName">First name:</label>
-            <input type="text" name="studentName" id="studentName" th:field="*{firstName}"/>
+            <p>(*) Required fields</p>
+            <label for="studentName">First name(*):</label>
+            <input
+                    type="text"
+                    name="studentName"
+                    id="studentName"
+                    th:field="*{firstName}"
+            />
+            <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error"></span>
             <br/><br/>
-            <label for="studentLastName">Last name:</label>
-            <input type="text" name="studentLastName" id="studentLastName" th:field="*{lastName}"/>
+            <label for="studentLastName">Last name(*):</label>
+            <input
+                    type="text"
+                    name="studentLastName"
+                    id="studentLastName"
+                    th:field="*{lastName}"
+            />
+            <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error"></span>
+            <br/><br/>
+            <label for="age">Age(*):</label>
+            <input
+                    type="text"
+                    name="age"
+                    id="age"
+                    th:field="*{age}"
+            />
+            <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="error"></span>
             <br/><br/>
             <label for="country">Country:</label>
             <select name="country" id="country" th:field="*{country}">
@@ -23,6 +49,24 @@
                 >
                 </option>
             </select>
+            <br/><br/>
+            <label for="postalCode">Postal Code:</label>
+            <input
+                    type="text"
+                    name="postalCode"
+                    id="postalCode"
+                    th:field="*{postalCode}"
+            />
+            <span th:if="${#fields.hasErrors('postalCode')}" th:errors="*{postalCode}" class="error"></span>
+            <br/><br/>
+            <label for="courseCode">Course Code:</label>
+            <input
+                    type="text"
+                    name="courseCode"
+                    id="courseCode"
+                    th:field="*{courseCode}"
+            />
+            <span th:if="${#fields.hasErrors('courseCode')}" th:errors="*{courseCode}" class="error"></span>
             <br/><br/>
             <label>Favorite programming language:</label>
             <input

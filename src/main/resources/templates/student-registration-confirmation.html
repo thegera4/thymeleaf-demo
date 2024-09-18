@@ -3,17 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>Student Confirmation page</title>
-        <!--link rel="stylesheet" type="text/css" th:href="@{/css/helloworld.css}" /-->
     </head>
     <body>
         <h1>Thank you for your registration!</h1>
-        <br/><br/>
+        <br/>
         <p>Student name:<span th:text="${student.firstName + ' ' + student.lastName}"></span></p>
-        <br/>
+        <p>Age:<span th:text="${student.age}"></span></p>
         <p>Country:<span th:text="${student.country}"></span></p>
-        <br/>
+        <p>Postal Code:<span th:text="${student.postalCode}"></span></p>
+        <p>Course Code:<span th:text="${student.courseCode}"></span></p>
         <p>Favorite programming language:<span th:text="${student.favoriteLanguage}"></span></p>
-        <br/>
         <p>Favorite Operating Systems:</p>
         <ul>
             <li th:each="tempSystem : ${student.favoriteSystems}" th:text="${tempSystem}"></li>
